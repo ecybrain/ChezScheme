@@ -1,0 +1,8 @@
+*.sdf
+*.user
+/.vs/
+Debug/
+Release/
+TDebug/
+TRelease/
+x64/

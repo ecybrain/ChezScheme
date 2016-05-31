@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="zlib">
+      <UniqueIdentifier>{3cfb70af-0c71-410c-bcf4-ae7789c4614d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\zlib\adler32.c">
+      <Filter>zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\zlib\compress.c">
+      <Filter>zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\zlib\crc32.c">
+      <Filter>zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\zlib\deflate.c">
+      <Filter>zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\zlib\gzclose.c">
+      <Filter>zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\zlib\gzlib.c">
+      <Filter>zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\zlib\gzread.c">
+      <Filter>zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\zlib\gzwrite.c">
+      <Filter>zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\zlib\infback.c">
+      <Filter>zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\zlib\inffast.c">
+      <Filter>zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\zlib\inflate.c">
+      <Filter>zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\zlib\trees.c">
+      <Filter>zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\zlib\uncompr.c">
+      <Filter>zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\zlib\zutil.c">
+      <Filter>zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\c\alloc.c" />
+    <ClCompile Include="..\..\c\expeditor.c" />
+    <ClCompile Include="..\..\c\fasl.c" />
+    <ClCompile Include="..\..\c\flushcache.c" />
+    <ClCompile Include="..\..\c\foreign.c" />
+    <ClCompile Include="..\..\c\gc.c" />
+    <ClCompile Include="..\..\c\gc-ocd.c" />
+    <ClCompile Include="..\..\c\gc-oce.c" />
+    <ClCompile Include="..\..\c\gcwrapper.c" />
+    <ClCompile Include="..\..\c\intern.c" />
+    <ClCompile Include="..\..\c\io.c" />
+    <ClCompile Include="..\..\c\new-io.c" />
+    <ClCompile Include="..\..\c\number.c" />
+    <ClCompile Include="..\..\c\prim.c" />
+    <ClCompile Include="..\..\c\prim5.c" />
+    <ClCompile Include="..\..\c\print.c" />
+    <ClCompile Include="..\..\c\schlib.c" />
+    <ClCompile Include="..\..\c\schsig.c" />
+    <ClCompile Include="..\..\c\segment.c" />
+    <ClCompile Include="..\..\c\statics.c" />
+    <ClCompile Include="..\..\c\stats.c" />
+    <ClCompile Include="..\..\c\symbol.c" />
+    <ClCompile Include="..\..\c\thread.c" />
+    <ClCompile Include="..\..\c\windows.c" />
+    <ClCompile Include="..\..\zlib\inftrees.c">
+      <Filter>zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\c\scheme.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\zlib\crc32.h">
+      <Filter>zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\zlib\deflate.h">
+      <Filter>zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\zlib\gzguts.h">
+      <Filter>zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\zlib\inffast.h">
+      <Filter>zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\zlib\inffixed.h">
+      <Filter>zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\zlib\inftrees.h">
+      <Filter>zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\zlib\inflate.h">
+      <Filter>zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\zlib\trees.h">
+      <Filter>zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\zlib\zconf.h">
+      <Filter>zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\zlib\zlib.h">
+      <Filter>zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\zlib\zutil.h">
+      <Filter>zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\boot\a6nt\equates.h" />
+    <ClInclude Include="..\..\boot\a6nt\scheme.h" />
+    <ClInclude Include="..\..\boot\i3nt\equates.h" />
+    <ClInclude Include="..\..\boot\i3nt\scheme.h" />
+    <ClInclude Include="..\..\boot\ta6nt\equates.h" />
+    <ClInclude Include="..\..\boot\ta6nt\scheme.h" />
+    <ClInclude Include="..\..\boot\ti3nt\equates.h" />
+    <ClInclude Include="..\..\boot\ti3nt\scheme.h" />
+    <ClInclude Include="..\..\c\externs.h" />
+    <ClInclude Include="..\..\c\globals.h" />
+    <ClInclude Include="..\..\c\segment.h" />
+    <ClInclude Include="..\..\c\sort.h" />
+    <ClInclude Include="..\..\c\system.h" />
+    <ClInclude Include="..\..\c\thread.h" />
+    <ClInclude Include="..\..\c\types.h" />
+    <ClInclude Include="..\..\c\version.h" />
+    <ClInclude Include="..\config.h" />
+  </ItemGroup>
+</Project>
