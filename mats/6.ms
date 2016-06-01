@@ -2618,12 +2618,13 @@
       (lambda () (((inspect/object fatfib) 'code) 'source-path))
       list)
     '("../examples/fatfib.ss" 16 4))
-  (equal?
-    (parameterize ([cd "/"] [source-directories (list (cd))])
-      (call-with-values
-        (lambda () (((inspect/object fatfib) 'code) 'source-path))
-        list))
-    (list (format "~a/../examples/fatfib.ss" (cd)) 16 4))
+  (or (windows?)
+      (equal?
+       (parameterize ([cd "/"] [source-directories (list (cd))])
+         (call-with-values
+	   (lambda () (((inspect/object fatfib) 'code) 'source-path))
+	   list))
+       (list (format "~a/../examples/fatfib.ss" (cd)) 16 4)))
   (begin
     (parameterize ([source-directories (list (parameterize ([cd ".."]) (cd)))])
       (load "examples/fatfib.ss" compile))

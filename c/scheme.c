@@ -406,10 +406,8 @@ static const char *path_last(p) const char *p; {
 
 #define SEARCHPATHMAXSIZE 8192
 #ifdef WIN32
-#ifndef DEFAULT_HEAP_PATH
 /* by default, look in executable directory or in parallel boot directory */
 #define DEFAULT_HEAP_PATH "%x;%x\\..\\..\\boot\\%m"
-#endif
 #define SEARCHPATHSEP ';'
 
 static char *get_defaultheapdirs() {

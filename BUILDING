@@ -210,7 +210,7 @@ in the directory $W\c, then recompile the Scheme sources via:
 
 bldnt $M
 
-in the directory $W/c, where $W is replaced by the name of the
+in the directory $W/s, where $W is replaced by the name of the
 workarea created by ./configure, and $M is the machine type.
 
 To run Chez Scheme or Petite Chez Scheme from a terminal window,
