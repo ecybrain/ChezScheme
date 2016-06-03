@@ -73,6 +73,13 @@ pps = f
 Scheme = ../bin/$m/scheme
 export SCHEMEHEAPDIRS=../boot/%m
 
+# Define the libdirs separator character
+ifeq ($(OS),Windows_NT)
+  dirsep = ;
+else
+  dirsep = :
+endif
+
 ProfileDumpSource = source.pd
 ProfileDumpBlock = block.pd
 PetiteBoot = ../boot/$m/petite.boot
@@ -353,7 +360,7 @@ nanopass.so: $(shell echo ../nanopass/nanopass/*) ../nanopass/nanopass.ss
              '(collect-request-handler (lambda () (collect 0 1)))'\
              '(collect 1 2)'\
              '(compile-library "../nanopass/nanopass.ss" "nanopass.so")'\
-             | ${Scheme} -q --libdirs "../nanopass::." --compile-imported-libraries
+             | ${Scheme} -q --libdirs "../nanopass${dirsep}${dirsep}." --compile-imported-libraries
 
 rootsrc = $(shell cd ../../s; echo *)
 ${rootsrc}: ; cp -p ../../s/$@ $@
