@@ -43,7 +43,7 @@ ${Main}: ${mainobj}
 	cp -p ${mainobj} ${Main}
 
 rootsrc=$(shell cd ../../c; echo *)
-${rootsrc}: ; ln -s ../../c/$@ $@
+${rootsrc}: ; cp -p ../../c/$@ $@
 
 scheme.o: itest.c
 scheme.o main.o: config.h

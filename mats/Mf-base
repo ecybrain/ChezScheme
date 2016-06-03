@@ -188,19 +188,11 @@ errors-$(conf): ${obj}
 
 doerrors:
 	rm -f errors-$(conf)
-ifdef MSDOS
-	-(cd $(objdir); grep '^Error' $(objname)) | dos2unix > errors-$(conf)
-	-(cd $(objdir); grep '^Bug' $(objname)) | dos2unix >> errors-$(conf)
-	-(cd $(objdir); grep '^Warning' $(objname)) | dos2unix >> errors-$(conf)
-	-(cd $(objdir); grep '^Expected' $(objname)) | dos2unix\
-         >> errors-$(conf)
-else
 	-(cd $(objdir); grep '^Error' $(objname)) > errors-$(conf)
 	-(cd $(objdir); grep '^Bug' $(objname)) >> errors-$(conf)
 	-(cd $(objdir); grep '^Warning' $(objname)) >> errors-$(conf)
 	-(cd $(objdir); grep '^Expected' $(objname))\
          >> errors-$(conf)
-endif
 
 fastreport:
 	$(MAKE) doerrors
@@ -325,16 +317,12 @@ source:
 source$o: ${src} mat.ss oop.ss ht.ss killme.c cat_flush.c ${fsrc} freq.in freq.out m4test.in m4test.out ${mdsrc} script.all$o prettytest.ss ftype.h
 
 rootsrc = $(shell cd ../../mats; echo *)
-${rootsrc}: ; ln -s ../../mats/$@ $@
+${rootsrc}: ; cp -p ../../mats/$@ $@
 
 prettytest.ss:
 	rm -f prettytest.ss
 	$(MAKE) ${prettysrc}
-ifdef MSDOS
-	cat ${prettysrc} | unix2dos > prettytest.ss
-else
 	cat ${prettysrc} > prettytest.ss
-endif
 
 bullyprettytest.ss: ${src}
 	(cd ../s; make source)

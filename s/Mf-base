@@ -356,7 +356,7 @@ nanopass.so: $(shell echo ../nanopass/nanopass/*) ../nanopass/nanopass.ss
              | ${Scheme} -q --libdirs "../nanopass::." --compile-imported-libraries
 
 rootsrc = $(shell cd ../../s; echo *)
-${rootsrc}: ; ln -s ../../s/$@ $@
+${rootsrc}: ; cp -p ../../s/$@ $@
 
 script.all: Mf-base
 
