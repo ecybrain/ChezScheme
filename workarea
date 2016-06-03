@@ -70,7 +70,7 @@ esac
 
 case $M in
   *nt)
-    ln="/bin/cp -pR"
+    ln="/bin/cp -R"
     ;;
   *)
     ln="/bin/ls -s"
@@ -220,9 +220,8 @@ esac
 # crutch links for fingers that remember old release structure
 case $M in
   *nt)
-    (cd $W/bin; forceworkln2 $M/scheme.exe scheme.exe)
-    (cd $W/bin; forceworkln2 $M/petite.exe petite.exe)
-    (cd $W/bin; forceworkln2 $M/csv941.dll csv941.dll)
+    (cd $W/bin; forceworkln $M/scheme.exe scheme)
+    (cd $W/bin; forceworkln $M/petite.exe petite)
     ;;
   *)
     (cd $W/bin; forceworkln $M/scheme scheme)
