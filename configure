@@ -332,7 +332,9 @@ sed -e "s;^m=none\$;m=$m;"\
 
 cat > $w/c/config.h << END
 #define SCHEME_SCRIPT "$installscriptname"
+#ifndef WIN32
 #define DEFAULT_HEAP_PATH "$installlib/csv%v/%m"
+#endif
 END
 
 cat > $w/c/Mf-config << END
