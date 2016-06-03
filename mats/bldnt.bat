@@ -2,7 +2,7 @@
 set m=%1
 set o=%2
 if "%o%"=="" set o=0
-set SCHEMEHEAPDIRS=.;%%x;%%x\..\..\boot\%%m
+set SCHEMEHEAPDIRS=.;..\boot\%%m
 echo (time (compile-file "mat")) | ..\bin\%m%\scheme -q
 cl /I../boot/%m% /nologo -c -DWIN32 foreign1.c
 cl /I../boot/%m% /nologo -c -DWIN32 foreign2.c
