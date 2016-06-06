@@ -29,8 +29,13 @@ datestamp.c:
 
 vs.bat:
 	echo '@echo off' > vs.bat
+	echo 'if "%VS140COMNTOOLS%" equ "" goto :VS' >> vs.bat
 	echo 'call "%VS140COMNTOOLS%..\..\VC\vcvarsall.bat" x86' >> vs.bat
 	echo '%*' >> vs.bat
+	echo 'exit 0' >> vs.bat
+	echo ':VS' >> vs.bat
+	echo 'echo Visual Studio 2015 must be installed.' >> vs.bat
+	echo 'exit 1' >> vs.bat
 	chmod +x vs.bat
 
 make.bat: vs.bat
