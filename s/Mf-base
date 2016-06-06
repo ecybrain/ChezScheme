@@ -157,7 +157,6 @@ allx: prettyclean saveboot
 	  $(MAKE) checkboot ;\
 	fi
 	$(MAKE) restoreboot
-	$(MAKE) resetbootlinks
 
 # bootstrap runs allx if any sources have changed since the last bootstrap
 bootstrap: ${allsrc}
@@ -290,18 +289,6 @@ xcheckboot: ${macroobj} ${patchfile}
 restoreboot:
 	-mv -f ../boot/$m/sbb ${PetiteBoot}
 	-mv -f ../boot/$m/scb ${SchemeBoot}
-
-resetbootlinks:
-	-@echo '(reset-handler abort)'\
-               '(for-each'\
-                  '(lambda (fn)'\
-                     '(let ([fn (symbol->string fn)])'\
-                        '(unless (file-symbolic-link? fn)'\
-                           '(when (guard (c [else #f]) (#%$$fasl-file-equal? (format "../~a" fn) fn))'\
-                              '(system (format "ln -sf ../../~a ~a" fn fn))'\
-                              '(void)))))'\
-                  '(list (quote ${SchemeBoot}) (quote ${PetiteBoot})))'\
-             | ${Scheme} -q
 
 ${PetiteBoot}: ${macroobj} ${patchfile} ${baseobj}
 	echo '(reset-handler abort)'\
