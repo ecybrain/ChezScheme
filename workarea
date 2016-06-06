@@ -73,7 +73,7 @@ case $M in
     ln="/bin/cp -R"
     ;;
   *)
-    ln="/bin/ls -s"
+    ln="/bin/ln -s"
     ;;
 esac
 
@@ -95,6 +95,7 @@ esac
 workln()
 {
     if [ ! -e $2 -a -e $1 ] ; then
+        echo $ln $1 $2
         $ln $1 $2 2> /dev/null
     fi
 }
