@@ -4,9 +4,6 @@ set o=%2
 if "%o%"=="" set o=0
 set SCHEMEHEAPDIRS=.;..\boot\%%m
 echo (time (compile-file "mat")) | ..\bin\%m%\scheme -q
-cl /I../boot/%m% /nologo -c -DWIN32 foreign1.c
-cl /I../boot/%m% /nologo -c -DWIN32 foreign2.c
-cl /I../boot/%m% /nologo -c -DWIN32 foreign3.c
-cl /nologo /DWIN32 cat_flush.c
-link -dll -out:foreign1.so foreign1.obj foreign2.obj foreign3.obj ..\bin\%m%\csv941.lib
+call ..\c\vs.bat cl /DWIN32 /Feforeign1.so /I..\boot\%m% /LD /MD /nologo ..\bin\%m%\csv941.lib foreign1.c foreign2.c foreign3.c
+call ..\c\vs.bat cl /DWIN32 /MD /nologo cat_flush.c
 ..\bin\%m%\scheme -q mat.so < script.all%o%

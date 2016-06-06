@@ -204,7 +204,7 @@
    (mat load-shared-object
       (file-exists? "foreign1.so")
       (begin (load-shared-object "foreign1.so") #t)
-      (begin (load-shared-object "msvcrt.dll") #f)
+      (begin (load-shared-object "msvcrt.dll") #t)
       (begin (load-shared-object "kernel32.dll") #t)
       (error? (load-shared-object 3))
     )
