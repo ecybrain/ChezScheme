@@ -20,12 +20,19 @@ clib=
 o = obj
 mdobj=windows.$o
 mdsrc=windows.c Makefile.$m cs.ico scheme.rc make.bat
-mdclean=make.bat scheme.res ../bin/$m/*.exp mtscheme.exe* mdscheme.exe*
+mdclean=vs.bat make.bat scheme.res ../bin/$m/*.exp mtscheme.exe* mdscheme.exe*
 
 include Mf-base
 
 # currently creating datestamp at 'make source' time
 datestamp.c:
 
-make.bat:
-	echo "@nmake /nologo -f Makefile.$m %*" > make.bat
+vs.bat:
+	echo '@echo off' > vs.bat
+	echo 'call "%VS140COMNTOOLS%..\..\VC\vcvarsall.bat" x86' >> vs.bat
+	echo '%*' >> vs.bat
+	chmod +x vs.bat
+
+make.bat: vs.bat
+	echo "@call vs.bat nmake /nologo -f Makefile.$m %*" > make.bat
+	chmod +x make.bat
