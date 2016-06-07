@@ -59,7 +59,7 @@
     (lambda (who . args)
       (if (#%$suppress-primitive-inlining)
           (errorf #f "incorrect number of arguments to #<procedure ~a>" who)
-          (errorf #f "incorrect argument count in call ~a" (cons who args)))))
+          (errorf #f "incorrect argument count in call ~s" (cons who args)))))
 (mat registry
   (error? (bad-arg-count 'get-registry))
   (error? (bad-arg-count 'get-registry 1 2))
